@@ -13,16 +13,16 @@ import org.bukkit.entity.Player;
 
 import java.util.Set;
 
-public class CustomHandler extends Handler {
+public class PlaySoundHandler extends Handler {
     public static final Factory FACTORY = new Factory();
-    public static class Factory extends Handler.Factory<CustomHandler> {
+    public static class Factory extends Handler.Factory<PlaySoundHandler> {
         @Override
-        public CustomHandler create(Session session) {
+        public PlaySoundHandler create(Session session) {
 
-            return new CustomHandler(session);
+            return new PlaySoundHandler(session);
         }
     }
-    public CustomHandler(Session session) {
+    public PlaySoundHandler(Session session) {
         super(session);
     }
 

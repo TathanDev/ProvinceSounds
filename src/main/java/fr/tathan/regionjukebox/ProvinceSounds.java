@@ -9,7 +9,7 @@ public final class ProvinceSounds extends JavaPlugin {
     @Override
     public void onEnable() {
         SessionManager sessionManager = WorldGuard.getInstance().getPlatform().getSessionManager();
-        sessionManager.registerHandler(CustomHandler.FACTORY, null);
+        sessionManager.registerHandler(PlaySoundHandler.FACTORY, null);
     }
 
     @Override
