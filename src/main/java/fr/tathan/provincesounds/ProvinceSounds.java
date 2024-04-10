@@ -1,4 +1,4 @@
-package fr.tathan.regionjukebox;
+package fr.tathan.provincesounds;
 
 import com.sk89q.worldguard.WorldGuard;
 import com.sk89q.worldguard.session.SessionManager;

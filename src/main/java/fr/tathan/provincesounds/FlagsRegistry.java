@@ -1,9 +1,8 @@
-package fr.tathan.regionjukebox;
+package fr.tathan.provincesounds;
 
 import com.sk89q.worldguard.protection.flags.*;
 import com.sk89q.worldguard.protection.flags.registry.FlagConflictException;
 import com.sk89q.worldguard.protection.flags.registry.FlagRegistry;
-import org.bukkit.Sound;
 
 public class FlagsRegistry {
 
@@ -15,7 +14,7 @@ public class FlagsRegistry {
     }
 
     public static void registerFlags() {
-        StateFlag flag = new StateFlag("play-music-enter", true, RegionGroup.NON_MEMBERS);
+        StateFlag flag = new StateFlag("play-music-enter", false, RegionGroup.NON_MEMBERS);
         StringFlag flag2 = new StringFlag("music-to-play", "BLOCK_NOTE_BLOCK_HARP");
         register(flag);
         register(flag2);

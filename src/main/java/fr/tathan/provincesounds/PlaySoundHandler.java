@@ -1,4 +1,4 @@
-package fr.tathan.regionjukebox;
+package fr.tathan.provincesounds;
 
 import com.sk89q.worldedit.bukkit.BukkitAdapter;
 import com.sk89q.worldedit.util.Location;
@@ -38,9 +38,16 @@ public class PlaySoundHandler extends Handler {
             String sound = toSet.queryValue(player, FlagsRegistry.MUSIC_TO_PLAY);
             long now = System.currentTimeMillis();
                 if ((now - lastSound) > SOUND_THRESHOLD && sound != null && !sound.isEmpty()) {
-                    Sound soundToPlay = Sound.valueOf(sound);
                     bukkitPlayer.stopAllSounds();
-                    bukkitPlayer.playSound(bukkitPlayer, soundToPlay, 1, 1);
+
+                    try {
+                        Sound soundToPlay = Sound.valueOf(sound);
+                        bukkitPlayer.playSound(bukkitPlayer, soundToPlay, 1, 1);
+
+                    } catch (IllegalArgumentException e) {
+                        bukkitPlayer.playSound(bukkitPlayer, sound, 1, 1);
+
+                    }
                 }
             lastSound = now;
         }
