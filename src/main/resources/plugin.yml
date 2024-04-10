@@ -1,5 +1,5 @@
-name: RegionJukebox
+name: ProvinceSounds
 version: '${version}'
-main: fr.tathan.provinceSounds.ProvinceSounds
+main: fr.tathan.provincesounds.ProvinceSounds
 api-version: '1.20'
 depend: [WorldGuard]
