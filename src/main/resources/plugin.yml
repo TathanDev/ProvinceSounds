@@ -3,3 +3,7 @@ version: '${version}'
 main: fr.tathan.provincesounds.ProvinceSounds
 api-version: '1.20'
 depend: [WorldGuard]
+commands:
+  provincesounds:
+    description: ProvinceSounds command
+    usage: /provincesounds

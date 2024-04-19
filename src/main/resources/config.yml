@@ -1,0 +1,18 @@
+#    ____                 _                     ____                        _
+#   |  _ \ _ __ _____   _(_)_ __   ___ ___     / ___|  ___  _   _ _ __   __| |___
+#   | |_) | '__/ _ \ \ / / | '_ \ / __/ _ \    \___ \ / _ \| | | | '_ \ / _` / __|
+#   |  __/| | | (_) \ V /| | | | | (_|  __/     ___) | (_) | |_| | | | | (_| \__ \
+#   |_|   |_|  \___/ \_/ |_|_| |_|\___\___|    |____/ \___/ \__,_|_| |_|\__,_|___/
+#
+# Welcome to the configuration file for ProvinceSounds!
+
+# Should Province Sounds stop all sounds to a player when they enter a region?
+stop-sounds: true
+
+# Playlists are a list of sounds.
+# Uses :
+# - You can use the playlist system to play a random sound from the list. (set the flag music-to-play to "random:playlist-1")
+playlists:
+  playlist-1:
+    - BLOCK_NOTE_BLOCK_HARP
+    - music_disc.pigstep
