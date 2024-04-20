@@ -3,6 +3,7 @@ package fr.tathan.provincesounds;
 import com.sk89q.worldguard.WorldGuard;
 import com.sk89q.worldguard.session.SessionManager;
 import fr.tathan.provincesounds.commands.ProvinceSoundCommand;
+import fr.tathan.provincesounds.metrics.Metrics;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -13,10 +14,15 @@ public final class ProvinceSounds extends JavaPlugin {
 
     @Override
     public void onEnable() {
+
         SessionManager sessionManager = WorldGuard.getInstance().getPlatform().getSessionManager();
         sessionManager.registerHandler(PlaySoundHandler.FACTORY, null);
         this.getCommand("provincesounds").setExecutor(new ProvinceSoundCommand());
-}
+
+        int pluginId = 21663;
+        Metrics metrics = new Metrics(this, pluginId);
+
+    }
 
     @Override
     public void onLoad() {
@@ -29,11 +35,4 @@ public final class ProvinceSounds extends JavaPlugin {
         return ProvinceSounds.getPlugin(ProvinceSounds.class);
     }
 
-//    public void addToConfig() {
-//        HashMap map = new HashMap<String, String>();
-//        map.put("playlist-1", string);
-//        map.put("playlist-2", string);
-//
-//        config.createSection("playlists", map);
-//    }
 }
