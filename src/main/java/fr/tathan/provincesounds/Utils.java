@@ -18,11 +18,12 @@ public class Utils {
     public static String getRandomSound(List<String> list) {
         Random random = new Random();
         String sound = list.get(random.nextInt(list.size()));
-        ProvinceSounds.getInstance().getLogger().info("Playing random sound " + list + " and the sound is " + sound + "!");
+        debug("Playing random sound " + list + " and the sound is " + sound + "!");
         return sound;
     }
 
     public static void playSound(Player player, String sound) {
+        debug("Playing sound " + sound + "!");
         try {
             Sound soundToPlay = Sound.valueOf(sound);
             player.playSound(player, soundToPlay, 1, 1);
@@ -30,6 +31,12 @@ public class Utils {
         } catch (IllegalArgumentException e) {
             player.playSound(player, sound, 1, 1);
 
+        }
+    }
+
+    public static void debug(String message) {
+        if(ProvinceSounds.getInstance().getConfig().getBoolean("debug")) {
+            ProvinceSounds.getInstance().getLogger().info(message);
         }
     }
 

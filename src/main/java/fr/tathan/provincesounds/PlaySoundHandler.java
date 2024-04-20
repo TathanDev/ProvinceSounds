@@ -42,19 +42,23 @@ public class PlaySoundHandler extends Handler {
             final String sound = toSet.queryValue(player, FlagsRegistry.MUSIC_TO_PLAY);
             long now = System.currentTimeMillis();
                 if ((now - lastSound) > SOUND_THRESHOLD && sound != null && !sound.isEmpty()) {
+                    Utils.debug("Playing sound " + sound + "!");
                     if(config.getBoolean("stop-sounds")) {
                         bukkitPlayer.stopAllSounds();
                     }
 
-                    if(sound.contains("playlist:")) {
+                    if(sound.contains("random:")) {
+                        Utils.debug("Random sound");
+
                         String playlist = sound.split(":")[1];
                         config.getConfigurationSection("playlists").getKeys(false).forEach(key -> {
                             if(key.equals(playlist)) {
-                                List<String> stringList = config.getConfigurationSection("randoms").getStringList(key);
+                                List<String> stringList = config.getConfigurationSection("playlists").getStringList(key);
                                 Utils.playSound(bukkitPlayer, Utils.getRandomSound(stringList));
                             }
                         });
                     } else {
+
                         Utils.playSound(bukkitPlayer, sound);
                     }
                 }

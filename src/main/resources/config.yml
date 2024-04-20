@@ -6,6 +6,9 @@
 #
 # Welcome to the configuration file for ProvinceSounds!
 
+# Debug mode
+debug: false
+
 # Should Province Sounds stop all sounds to a player when they enter a region?
 stop-sounds: true
 
