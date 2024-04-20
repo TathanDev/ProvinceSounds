@@ -6,4 +6,5 @@ depend: [WorldGuard]
 commands:
   provincesounds:
     description: ProvinceSounds command
-    usage: /provincesounds
+    usage: /provincesounds <random>
+    aliases: [ps]
